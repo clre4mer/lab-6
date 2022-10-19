@@ -24,7 +24,7 @@ def inMatrix(mat, n):
 def outMatrix(mat, n):
     for i in range(n):
         for j in range(n):
-            print("{0:.2f}".format(mat[i][j]), end=" ")
+            print("{0:.4f}".format(mat[i][j]), end=" ")
         print()
 
 #Cуммирование всех элементов матрицы
@@ -42,7 +42,7 @@ def koef(mat,n,sum):
     for i in range(n):
         sum1=0
         for j in range(n):
-            sum1 += mat[j][i]
+            sum1 += mat[i][j]
         st.append(sum1/sum)
     return st
 
@@ -69,7 +69,10 @@ outMatrix(mass, n)
 mass_sum = matrixSum(mass, n)
 print("\nСумма элементов матрицы: {0:.2f}".format(mass_sum))
 koef1 = koef(mass, n, mass_sum) #Создание массива, хранящего весовые коэффициенты
-koef1.reverse()
+
 print("Весовые коэффициенты:", end=" ")
+sum2=0
 for elem in koef1:
-    print("{0:.2f}".format(elem), end=" ") 
+    sum2 = sum2 + elem
+    print("{0:.2f}".format(elem), end=" ")
+print ('\nСумма весовых коэфициентов равна {0:.2f}'.format(sum2))
