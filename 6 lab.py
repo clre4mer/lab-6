@@ -74,5 +74,6 @@ print("Весовые коэффициенты:", end=" ")
 sum2=0
 for elem in koef1:
     sum2 = sum2 + elem
-    print("{0:.2f}".format(elem), end=" ")
+    a = round(elem, 2)
+    print(a, end=" ")
 print ('\nСумма весовых коэфициентов равна {0:.2f}'.format(sum2))
